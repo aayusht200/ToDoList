@@ -42,9 +42,13 @@ export class AppLogic {
   }
 
   // --- Utility / Summary ---
-  getAppSummary() {}
+  getAppSummary() {
+    return this.projectList.map((project) => project.getSummary());
+  }
 
   // --- Sync Helpers ---
-  saveToStorage() {}
+  saveToStorage() {
+    localStorage.setItem("projectList", JSON.stringify(this.projectList));
+  }
   loadFromStorage() {}
 }
